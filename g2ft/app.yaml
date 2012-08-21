@@ -1,0 +1,51 @@
+application: gplus2ft
+version: 2
+runtime: python
+api_version: 1
+
+inbound_services:
+- warmup
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /image
+  static_dir: image
+
+- url: /oauth2callback
+  script: oauth2client/appengine.py
+
+- url: /link
+  script: main.py
+  login: required
+
+- url: /auth
+  script: main.py
+  login: required
+
+- url: /unlink
+  script: main.py
+  login: required
+
+- url: /sync
+  script: main.py
+
+- url: /newsync
+  script: main.py
+  login: admin
+
+- url: /updatestatus
+  script: main.py
+  login: admin
+
+- url: /modifylimit
+  script: utils.py
+  login: admin
+
+- url: /modifylastsites
+  script: utils.py
+
+- url: .*
+  script: main.py
+
