@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="textml; charset=UTF-8">
+<title>G2FTS:将你的Google+同步到Facebook,Twitter和新浪微博</title>
+<style type="text/css">
+#vc { display:table; width:95%; height:70%; overflow:hidden; }
+#vci { vertical-align:middle; display:table-cell; text-align:center; _position:absolute; _top:50%; _left:50%; }
+#content { color:#000; border:1px solid #fff; display:inline-block; _position:relative; _top:-50%; _left:-50%; }
+td {
+    text-align: left;
+    padding-bottom:10px;
+}
+h1 {
+    text-align:center;
+}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-655689-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="vc"><div id="vci"><div id="content">
+<table>
+<tr>
+<td>
+<h1>G2FTS</h1>
+{% if gplus %}
+   <table>
+{% if twitter %}
+    <tr><td style="text-align:right;"><a href="/unlink?mode=twitter">点击这里</a></td><td> 解除你 Twitter 帐户 {{twitter}} 的关联</td></tr>
+{% else %}
+    <tr><td style="text-align:right;"><a href="/auth?twitter=1">点击这里</a></td><td> 关联你的 Twitter 帐户</td></tr>
+{% endif %}
+
+{% if facebook %}
+    <tr><td style="text-align:right;"><a href="/unlink?mode=facebook">点击这里</a></td><td> 解除你 facebook 帐户 {{facebook}} 的关联</td></tr>
+{% else %}
+    <tr><td style="text-align:right;"><a href="/auth?facebook=1">点击这里</a></td><td> 关联你的 facebook 帐户</td></tr>
+{% endif %}
+
+{% if sina %}
+    <tr><td style="text-align:right;"><a href="/unlink?mode=sina">点击这里</a></td><td> 解除你的 新浪微博帐户 {{sina}} 的关联 </td></tr></table></p>
+{% else %}
+    </table></p><p align="center">请<a href="https://plus.google.com/b/103864578803902783993/103864578803902783993/posts/RuYofyXXBS4">阅读这里</a>了解关联新浪微博的方法</p>
+{% endif %}
+
+{% else %}
+   <p align="center"><table><tr><td style="text-align:right;"> <a href="/auth?gplus=1">点击这里</a></td><td> 关联你的 Google+ 帐户 </td></tr></table>
+{% endif %}
+
+</td>
+</tr>
+</table>
+</div></div></div>
+<p align="center"><font size=1>推送延迟应该在1分钟范围(may have 1 minute delay)，新浪微博推送可能会遭遇间歇性的抽风(Sina WeiBo may failed sometimes),Twitter也会屏蔽敏感词汇(Twitter may refuse some content)</font></p><hr/>
+<p align="center"><font size=1>链接Twitter和Facebook需要FQ(you may need fuck some wall to use this)</font></p>
+<p align="center"><a href="/"><img src="image/g2ftsi.jpg"></a><p>
+</body>
+</html>

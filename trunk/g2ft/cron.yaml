@@ -1,0 +1,4 @@
+cron:
+- description: every 600 minute check new post in gplus
+  url: /newsync
+  schedule: every 600 minutes

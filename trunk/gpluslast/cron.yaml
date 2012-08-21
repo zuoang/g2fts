@@ -1,0 +1,4 @@
+cron:
+- description: every 1 minute check new post in gplus
+  url: /cron
+  schedule: every 1 minutes
