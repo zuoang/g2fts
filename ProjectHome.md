@@ -1,0 +1,3 @@
+Google+ to Facebook Twitter and Sina Weibo
+
+源代码目录中包含两个文件夹，对应两个GAE工程，其中g2fs主要完成Google+帖子的获取和同步工作， gpluslast主要完成检测工作，G2FS只需要部署一个，gpluslast可以部署多个，然后通过g2fs的modifylastsites地址来进行登记，gpluslast周期性的检测注册用户的公用Google+页面，测试是否有新的帖子，测试的方法是通过网页获取然后进行关键字比较，如果发现用户发了新的Public帖子，调用g2fs的接口进行同步。
